@@ -4,6 +4,8 @@
 
 Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
 
+// Start of img2cpp code
+
 // 'garfield', 240x135px
 const unsigned char epd_bitmap_garfield [] PROGMEM = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
@@ -265,8 +267,11 @@ const unsigned char epd_bitmap_garfield [] PROGMEM = {
 // Array of all bitmaps for convenience. (Total bytes used to store images in PROGMEM = 4080)
 const int epd_bitmap_allArray_LEN = 1;
 const unsigned char* epd_bitmap_allArray[1] = {
+  // This is the name of the image. Use this as the 3rd argument in the tft.drawBitmap function below
   epd_bitmap_garfield
 };
+
+// End of img2cpp code
 
 void setup() {
   Serial.begin(115200);
@@ -290,16 +295,11 @@ void setup() {
   Serial.println(F("Initialized"));
 
 
+  // The third argument in the list is the name of the image you want to display
+  // Change this argument if you used img2cpp to make a new image.
   
   tft.drawBitmap(0, 0, epd_bitmap_garfield, 240, 135, ST77XX_WHITE, ST77XX_BLACK);
-  tft.setTextColor(ST77XX_WHITE);
-  tft.setTextSize(1);
-  tft.setCursor(126, 0);
-  tft.println("Biological");
-  tft.setCursor(126, 10);
-  tft.println("Communications");
-  tft.setCursor(126, 20);
-  tft.println("Spring 2023");
+
 }
 
 void loop() {
