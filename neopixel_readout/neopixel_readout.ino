@@ -4,7 +4,7 @@
 // Brett Ian Balogh
 // https://github.com/giantmolecules/ROBOTICS_FA23_CODE.git
 //
-// neopixel.ino
+// neopixel_readout.ino
 //
 // This is an example of using the on-board neopixel and printing
 // the RGB values to the TFT. 
