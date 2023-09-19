@@ -6,7 +6,8 @@
 //
 // neopixel.ino
 //
-// This is an example of using the on-board neopixel
+// This is an example of using the on-board neopixel and printing
+// the RGB values to the TFT. 
 //
 //----------------------------------------------------------------//
 
