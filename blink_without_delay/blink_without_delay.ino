@@ -61,17 +61,19 @@ void setup() {
 
 void loop() {
  time_now = millis();
+ 
  tft.setCursor(0,0);
  tft.print("Now: ");
- tft.print(time_now);
+ tft.println(time_now);
  tft.print(" Then: ");
- tft.print(time_then);
+ tft.println(time_then);
  tft.print(" Delta: ");
- tft.print(time_now-time_then);
+ tft.println(time_now-time_then);
+ 
  if(time_now - time_then >= interval){
   digitalWrite(LED_PIN, HIGH);
-  tft.setCursor(0,0);
-  tft.print("HEY!");
+  //tft.setCursor(0,0);
+  tft.fillScreen(ST77XX_BLACK);
   delay(interval);
   time_then = millis();
  }
