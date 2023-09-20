@@ -4,9 +4,11 @@
 // Brett Ian Balogh
 // https://github.com/giantmolecules/ROBOTICS_FA23_CODE.git
 //
-// project_template.ino
+// 3_leds_blink_without_delay.ino
 //
-// This is a template for our code that readies the TFT for use.
+// This demonstrates the use of multiple timers to blink three LEDs
+// independently of each other without using delays (except to keep
+// the LED on briefly.
 //
 //----------------------------------------------------------------//
 
@@ -23,14 +25,17 @@ Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
 #define  LED2 11
 #define  LED3 12
 
+// Timer 1
 int time_now_1 = 0;
 int time_then_1 = 0;
 int interval_1 = 1000;
 
+// Timer 2
 int time_now_2 = 0;
 int time_then_2 = 0;
 int interval_2 = 2500;
 
+// Timer 3
 int time_now_3 = 0;
 int time_then_3 = 0;
 int interval_3 = 4500;
@@ -75,6 +80,7 @@ void setup() {
 
 void loop() {
 
+  // Timer 1
   time_now_1 = millis();
 
   if (time_now_1 - time_then_1 >= interval_1) {
@@ -82,11 +88,11 @@ void loop() {
     digitalWrite(LED1, HIGH);
     delay(100);
     digitalWrite(LED1, LOW);
-
-     time_then_1 = millis();
+    // Reset timer
+    time_then_1 = millis();
   }
 
-  
+  // Timer 2
   time_now_2 = millis();
 
   if (time_now_2 - time_then_2 >= interval_2) {
@@ -94,19 +100,22 @@ void loop() {
     digitalWrite(LED2, HIGH);
     delay(100);
     digitalWrite(LED2, LOW);
-
+    // Reset timer
     time_then_2 = millis();
 
   }
-    time_now_3 = millis();
+
+  // Timer 3
+  time_now_3 = millis();
 
   if (time_now_3 - time_then_3 >= interval_3) {
     digitalWrite(LED3, HIGH);
     delay(100);
     digitalWrite(LED3, LOW);
-
+    // Reset timer
     time_then_3 = millis();
   }
+  
 }
 
 //----{END}------------------------------------------------------//
