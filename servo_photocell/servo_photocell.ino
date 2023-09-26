@@ -4,9 +4,9 @@
 // Brett Ian Balogh
 // https://github.com/giantmolecules/ROBOTICS_FA23_CODE.git
 //
-// servo_potentiometer.ino
+// servo_photocell.ino
 //
-// Use a potentiometer to change the position of a hobby servo motor.
+// Connect photocell to pin 5 to control servo position.
 //
 //----------------------------------------------------------------//
 
@@ -30,7 +30,6 @@ int ADC_Max = 4096;     // This is the default ADC max value on the ESP32 (12 bi
 // a range of max values of 512-4096
 
 int val;    // variable to read the value from the analog pin
-
 //----{SETUP}-----------------------------------------------------//
 
 void setup() {
