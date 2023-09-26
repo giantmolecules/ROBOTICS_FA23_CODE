@@ -70,7 +70,7 @@ void loop() {
 
   ledcWrite(ledChannel, scaledValue); // write value to channel
 
-  tft.print(scaledValue);
+  tft.println(scaledValue);
 }
 
 //----{END}------------------------------------------------------//
