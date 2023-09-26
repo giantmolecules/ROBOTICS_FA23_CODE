@@ -6,8 +6,8 @@
 //
 // project_template.ino
 //
-// This is a template for our code that readies the TFT for use.
-//
+// Q: Which pins can you attach to PWM peripheral? 
+// A: All but 35, 36, 37, 41, 42
 //----------------------------------------------------------------//
 
 // Include libraries for TFT
@@ -18,6 +18,11 @@
 // Create a TFT object
 Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
 
+const int freq = 5000;
+const int ledChannel = 0;
+const int resolution = 8;
+
+int pins[] = {1, 2, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 35, 36, 37, 41, 42};
 
 //----{SETUP}-----------------------------------------------------//
 
@@ -48,12 +53,36 @@ void setup() {
 
   Serial.println(F("TFT Initialized"));
 
+  // Configure PWM
+  ledcSetup(ledChannel, freq, resolution);
+  // Attach pins to PWM preipheral
+  for (int i = 0; i < 20; i++) {
+    //pinMode(i, OUTPUT);
+    ledcAttachPin(i, ledChannel);
+  }
+
 }
 
 //----{LOOP}------------------------------------------------------//
 
 void loop() {
- 
+  
+  for (int j = 0; j < 256; j++) {
+    for (int i = 0; i < 20; i++) {
+      //analogWrite(i, j);
+      ledcWrite(i, j);
+    }
+    delay(10);
+  }
+  
+  for (int j = 255; j > 0; j--) {
+    for (int i = 0; i < 20; i++) {
+      //analogWrite(i, j);
+      ledcWrite(i, j);
+    }
+    delay(10);
+  }
+  
 }
 
 //----{END}------------------------------------------------------//
