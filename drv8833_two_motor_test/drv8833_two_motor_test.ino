@@ -4,9 +4,10 @@
 // Brett Ian Balogh
 // https://github.com/giantmolecules/ROBOTICS_FA23_CODE.git
 //
-// project_template.ino
+// drv8833_two_motor_test.ino
 //
-// This is a template for our code that readies the TFT for use.
+// This program speeds up and slows down / goes forward and back using 
+// the DRV8833 motor driver and two tt gearhead motors.
 //
 //----------------------------------------------------------------//
 
