@@ -1,4 +1,14 @@
-
+//----------------------------------------------------------------//
+//
+// SAIC Robotics Fall 2023
+// Brett Ian Balogh
+// https://github.com/giantmolecules/ROBOTICS_FA23_CODE.git
+//
+// motor_control_tip122.ino
+//
+// Like BLINK sketch, but for motors.
+//
+//----------------------------------------------------------------//
 void setup() {
   // put your setup code here, to run once:
   pinMode(5, OUTPUT);
