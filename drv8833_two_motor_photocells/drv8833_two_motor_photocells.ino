@@ -4,10 +4,10 @@
 // Brett Ian Balogh
 // https://github.com/giantmolecules/ROBOTICS_FA23_CODE.git
 //
-// drv8833_two_motor_test.ino
+// drv8833_two_motor_photocells.ino
 //
-// This program speeds up and slows down / goes forward and back using
-// the DRV8833 motor driver and two tt gearhead motors.
+// This program is a good illustration of Braitenberg's Vehicles
+// Light-Following robot. 
 //
 //----------------------------------------------------------------//
 
