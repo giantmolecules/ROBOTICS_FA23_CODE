@@ -103,7 +103,7 @@ void loop() {
 
 }
 
-void forward(int speed) {
+void left(int speed) {
   // Motor 1 Fwd
   // ledcWrite(channel, value)
   ledcWrite(0, 0); // set direction
@@ -112,6 +112,29 @@ void forward(int speed) {
   // ledcWrite(channel, value)
   ledcWrite(2, 0); // set direction
   ledcWrite(3, speed); // set speed
+
+}
+
+void right(int speed) {
+  // Motor 1 Rev
+  // ledcWrite(channel, value)
+  ledcWrite(1, 0); // set direction
+  ledcWrite(0, speed); // set speed
+  // Motor 2 Rev
+  // ledcWrite(channel, value)
+  ledcWrite(3, 0); // set direction
+  ledcWrite(2, speed); // set speed
+}
+
+void forward(int speed) {
+  // Motor 1 Fwd
+  // ledcWrite(channel, value)
+  ledcWrite(0, 0); // set direction
+  ledcWrite(1, speed); // set speed
+  // Motor 2 Rev
+  // ledcWrite(channel, value)
+  ledcWrite(3, 0); // set direction
+  ledcWrite(2, speed); // set speed
 }
 
 void reverse(int speed) {
@@ -119,43 +142,10 @@ void reverse(int speed) {
   // ledcWrite(channel, value)
   ledcWrite(1, 0); // set direction
   ledcWrite(0, speed); // set speed
-  // Motor 2 Rev
-  // ledcWrite(channel, value)
-  ledcWrite(3, 0); // set direction
-  ledcWrite(2, speed); // set speed
-}
-
-void right(int speed) {
-  // Motor 1 Fwd
-  // ledcWrite(channel, value)
-  ledcWrite(0, 0); // set direction
-  ledcWrite(1, speed); // set speed
-  // Motor 2 Rev
-  // ledcWrite(channel, value)
-  ledcWrite(3, 0); // set direction
-  ledcWrite(2, speed); // set speed
-}
-
-void left(int speed) {
-  // Motor 1 Rev
-  // ledcWrite(channel, value)
-  ledcWrite(1, 0); // set direction
-  ledcWrite(0, speed); // set speed
   // Motor 2 Fwd
   // ledcWrite(channel, value)
   ledcWrite(2, 0); // set direction
   ledcWrite(3, speed); // set speed
-}
-
-void stop() {
-  // Motor 1 Rev
-  // ledcWrite(channel, value)
-  ledcWrite(1, 0); // set direction
-  ledcWrite(0, 0); // set speed
-  // Motor 2 Fwd
-  // ledcWrite(channel, value)
-  ledcWrite(2, 0); // set direction
-  ledcWrite(3, 0); // set speed
 }
 
 //----{END}------------------------------------------------------//
