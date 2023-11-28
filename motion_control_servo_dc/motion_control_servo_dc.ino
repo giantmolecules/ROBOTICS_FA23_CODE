@@ -147,4 +147,15 @@ void left(int speed) {
   ledcWrite(3, speed); // set speed
 }
 
+void stop() {
+  // Motor 1 Rev
+  // ledcWrite(channel, value)
+  ledcWrite(1, 0); // set direction
+  ledcWrite(0, 0); // set speed
+  // Motor 2 Fwd
+  // ledcWrite(channel, value)
+  ledcWrite(2, 0); // set direction
+  ledcWrite(3, 0); // set speed
+}
+
 //----{END}------------------------------------------------------//
